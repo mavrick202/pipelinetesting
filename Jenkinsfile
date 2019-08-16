@@ -7,7 +7,7 @@ pipeline {
             sh 'rm -rf pipelinetesting_testing'
             sh 'rm -rf pipelinetesting'
             sh 'git clone https://github.com/mavrick202/pipelinetesting.git'
-            }
+            
             }
         }
 
