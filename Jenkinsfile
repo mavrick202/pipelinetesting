@@ -4,15 +4,15 @@ pipeline {
 
         stage('Clone Repo') {
           steps {
-            sh 'rm -rf pipelinetesting'
+            sh 'rm -rf pipelinetesting_master'
             sh 'git clone https://github.com/mavrick202/pipelinetesting.git'
             }
         }
 
         stage('Build Docker Image') {
           steps {
-            sh 'cd /var/lib/jenkins/workspace/pipelinetesting'
-            sh 'cp  /var/lib/jenkins/workspace/pipelinetesting/pipelinetesting/* /var/lib/jenkins/workspace/pipelinetesting'
+            sh 'cd /var/lib/jenkins/workspace/pipelinetesting_master'
+            #sh 'cp  /var/lib/jenkins/workspace/pipelinetesting/pipelinetesting/* /var/lib/jenkins/workspace/pipelinetesting'
             sh 'docker build -t sreeharshav/pipelinetestmaster:${BUILD_NUMBER} .'
             }
         }
